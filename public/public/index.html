@@ -1,0 +1,184 @@
+﻿<!doctype html>
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<title>Chatt App</title>
+</head>
+
+<body>
+	<div class="header">
+
+		<div class="row h-100">
+
+
+			<div class=" col-md-4" id="side-1">
+				<div class="cards">
+					<div class="card-header">
+						<div class="row">
+							<div class="col-md-10">
+								<img src="#" id="img-profile" class="img_profile rounded-circle" />
+							<center>	<h5 id="display_name" style=" margin-top: -35px;">Any Nme</h5></center>
+						
+								<div class="dropleft">
+									<span class="dropdown-toggle" data-toggle="dropdown" style=" float: right; margin-top: -40px;">
+										<i class="fas fa-ellipsis-v icon "
+											style="cursor: pointer; margin-top: 10px;"></i>
+									</span>
+									<div class="dropdown-menu">
+										<a href="#" class="dropdown-item" class="openbtn" onclick="openNav()" id="new_chat">Add Friend</a>
+										<a href="#" class="dropdown-item" onclick="sigin()" id="linksignin">Sign In</a>
+										<a href="#" class="dropdown-item" onclick="signout()" style="display: none;"
+											id="linksignout">Sign Out</a>
+									</div>
+									
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+
+				</div>
+				<h3 class="bg-light" style="padding: 20px; margin-bottom: -20px;">Friends</h3>
+				<nav class="navbar navbar-expand-lg navbar-light bg-light">
+					
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+					  <span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarNavDropdown">
+					  <ul class="list-group list-group-flush" id="lstChat">
+						
+					  </ul>
+					</div>
+				  </nav>
+
+			</div>
+
+
+			<div class="col-md-8 " id="side-2">
+				<div class="card" id="chat-panel" style="display: none;">
+					<div class="card-header">
+						<div class="row">
+							<div class="col-md-2"><img src="img/icon.png"
+									class="img_profile rounded-circle" id="friend_profile_img" /></div>
+							<div class="col-md-6">
+								<div class="name " id="friend_profile_name">Any Name</div>
+								<div class="under-name" id="friend_profile_seen">0/00/0000</div>
+							</div>
+							
+						</div>
+					</div>
+
+					<div class="card-body" id="msg-show-area">
+						
+						
+						
+					</div>
+
+					<div class="card-footer">
+						<div class="row">
+							<div class="col-md-10 " >
+								<input type="text" class="form-control from-rounded" placeholder="Type Here...."
+									id="msg" style="border-radius: 1rem;"  />
+								
+									
+							</div>
+						
+							<div class="col-md-2" style="float: right;">
+								<center>
+								<button class="btn primary" onclick="send_msg();" style="margin-top: auto;" >
+								<span class="fa fa-arrow-circle-right" title="Send Message" style="font-size: 20px; margin-top: 10px;"></span></button>
+							</center>
+							</div>
+						
+						</div>
+					</div>
+				</div>
+				<div id="srat-div">
+					<center>
+					<H1>Lets Start Chats....</H1>
+				
+				</center>
+				
+				</div>
+			</div>
+
+
+
+
+		</div>
+	</div>
+
+	<div class="container">
+		<div id="mySidebar" class="sidebar thumbnail">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+			<center>
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="card">
+								<div class="card-header">
+								Search Freind
+								</div>
+								<div class="card-body" >
+
+									<ul class="list-group list-group-flush" id="show_friend">
+
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					</ul>
+		</center>
+		  
+		  	
+		</div>
+		</div>
+		
+
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+	integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+	crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+	integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+	crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+	integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+	crossorigin="anonymous"></script>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-database.js"></script>
+<script>
+	// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+	var firebaseConfig = {
+		apiKey: "AIzaSyDUFApMSArwuetygloSRcnEDXR10IN89Z0",
+		authDomain: "chatt-f3030.firebaseapp.com",
+		databaseURL: "https://chatt-f3030.firebaseio.com",
+		projectId: "chatt-f3030",
+		storageBucket: "chatt-f3030.appspot.com",
+		messagingSenderId: "990498706442",
+		appId: "1:990498706442:web:6443f7d4d4a802304a3bf3",
+		measurementId: "G-YCJHDC5XPY"
+	};
+	// Initialize Firebase
+	firebase.initializeApp(firebaseConfig);
+
+</script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-analytics.js"></script>
+<script src="boot-strap/form_work_js.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+		integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link href="boot-strap/form_work.css" rel="stylesheet" type="text/css" />
+
+</html>

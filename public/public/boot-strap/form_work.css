@@ -1,0 +1,192 @@
+body{
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+
+
+}
+
+body{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ 
+}
+
+
+
+.chatbox{
+  height: 600px;
+  width: 95%;
+  background-color: white;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 0px;
+ 
+
+}
+
+.name{
+  font-weight: 400;
+  color: #000;
+}
+
+.under-name{
+  font-size:12px;
+  line-height: 15px;
+  max-height: 15px;
+}
+
+.chat_img{
+  width: 30px;
+  height: 30px;
+}
+
+.time {
+  font-size: 10px;
+  color: #9CA1A3;
+  margin-top: 3%;
+  margin-left: 1%;
+}
+
+.receive {
+  background-color: #dddbd1;
+  border-radius: 1rem;
+  padding: 10px 10px;
+  display: inline-block;
+}
+
+.sent {
+  background-color: whitesmoke;
+  border-radius: 1rem;
+  padding: 10px 10px;
+  display: inline-block;
+
+}
+
+.card{
+  height: 94vh;
+}
+#msg-show-area{
+
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.img_profile{
+  border-radius: 1rem;
+  height: 50px;
+  width: 50px;
+}
+
+.dropdown-toggle::before{
+  display:none !important;
+}
+
+.friend-pic{
+  border-radius: 1rem;
+  height: 30px;
+  width: 30px;
+}
+
+
+.name{
+  font-size: 14px;
+}
+
+/* The sidebar menu */
+.sidebar {
+  height: 100%; 
+  width: 0; 
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  
+  overflow-y:hidden; 
+  padding-top: 60px;
+  transition: 0.5s; 
+  background-color: #d2dbdc;
+}
+
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  display: block;
+  transition: 0.3s;
+}
+
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #67DDE0;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.side-2{
+  height: 100%;
+}
+
+.containerS {
+  border: 2px solid #dedede;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+/* Darker chat container */
+.darker {
+  border-color: #ccc;
+  background-color: #ddd;
+}
+
+/* Clear floats */
+.containerS::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Style images */
+.containerS img {
+  float: left;
+  max-width: 60px;
+  width: 100%;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+/* Style the right image */
+.containerS img.right {
+  float: right;
+  margin-left: 20px;
+  margin-right:0;
+}
+
+/* Style time text */
+.time-right {
+  float: right;
+  color: #aaa;
+}
+
+/* Style time text */
+.time-left {
+  float: left;
+  color: #999;
+}
+
